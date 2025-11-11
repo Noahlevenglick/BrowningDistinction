@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hear the personal stories that bring Browning's history to life. Read letters, listen to recordings, and watch interviews from students, faculty, and alumni across the decades.">
+    <title>Voices from the Archive | The Browning Archive</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/exhibits.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+
+    <!-- Site Header & Navigation -->
+    <header class="site-header" id="header">
+        <nav class="site-nav">
+            <a href="index.html" class="site-logo">The Browning Archive</a>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="timeline.html" class="nav-link">Timeline</a></li>
+                <li><a href="exhibits.html" class="nav-link">Exhibits</a></li>
+                <li><a href="voices.html" class="nav-link active">Voices</a></li>
+                <li><a href="explore.html" class="nav-link">Explore</a></li>
+                <li><a href="search.html" class="nav-link">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Voices Page -->
+    <main class="voices-page" id="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Voices from the Archive</h1>
+                <p class="page-description">
+                    The human side of history. These letters, diary entries, and recordings capture the personal
+                    experiences, emotions, and reflections of the Browning community across 150 years. Each voice
+                    tells a unique story, yet together they reveal the enduring spirit of our school.
+                </p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="exhibit-filters">
+                <button class="filter-btn active" data-filter="all">All Voices</button>
+                <button class="filter-btn" data-filter="letter">📝 Letters</button>
+                <button class="filter-btn" data-filter="diary">📔 Diaries</button>
+                <button class="filter-btn" data-filter="audio">🎙️ Audio</button>
+                <button class="filter-btn" data-filter="video">🎥 Video</button>
+                <button class="filter-btn" data-filter="featured">⭐ Featured</button>
+            </div>
+
+            <!-- Featured Voices -->
+            <section class="featured-voices-section" id="featured-voices">
+                <h2 class="section-title">Featured Stories</h2>
+                <div class="featured-voices-grid" id="featured-voices-grid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- All Voices Grid -->
+            <section class="all-voices-section" id="all-voices">
+                <h2 class="section-title">All Voices</h2>
+                <div class="voices-grid" id="voices-grid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading voices from the archive...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <p>No voices found matching your criteria.</p>
+                <button class="btn btn-primary" onclick="resetVoicesFilters()">View All Voices</button>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <section class="voices-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Share Your Story</h2>
+                    <p>
+                        Do you have letters, recordings, or memories from your time at Browning?
+                        We'd love to add your voice to the archive and preserve your story for future generations.
+                    </p>
+                    <a href="contribute.html" class="btn btn-secondary">Contribute Your Story</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Voice Detail Modal -->
+    <div class="voice-modal" id="voice-modal" role="dialog" aria-modal="true" aria-labelledby="voice-modal-title">
+        <div class="modal-content">
+            <button class="modal-close" id="voice-modal-close" aria-label="Close">&times;</button>
+
+            <div class="voice-modal-body">
+                <!-- Header -->
+                <div class="voice-modal-header">
+                    <span class="voice-type-badge" id="voice-type-badge"></span>
+                    <h2 class="voice-modal-title" id="voice-modal-title"></h2>
+                    <div class="voice-modal-meta">
+                        <p class="voice-author" id="voice-author"></p>
+                        <p class="voice-date" id="voice-date"></p>
+                    </div>
+                </div>
+
+                <!-- Media Section -->
+                <div class="voice-modal-media">
+                    <img src="" alt="" id="voice-image" class="voice-image">
+                    <div id="voice-audio-player" class="voice-audio-player" style="display: none;">
+                        <audio controls id="voice-audio">
+                            <source src="" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div id="voice-video-player" class="voice-video-player" style="display: none;">
+                        <video controls id="voice-video">
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="voice-modal-description">
+                    <h3>About This Voice</h3>
+                    <p id="voice-description"></p>
+                </div>
+
+                <!-- Transcription -->
+                <div class="voice-modal-transcription">
+                    <h3>Transcription</h3>
+                    <div class="transcription-box" id="voice-transcription"></div>
+                </div>
+
+                <!-- Tags -->
+                <div class="voice-modal-tags" id="voice-tags-section">
+                    <h4>Related Topics:</h4>
+                    <div class="tags-list" id="voice-tags"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Browning Archive</h3>
+                    <p>Preserving and sharing 150+ years of The Browning School's history through an interactive digital experience.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="timeline.html">Historical Timeline</a></li>
+                        <li><a href="exhibits.html">Digital Exhibits</a></li>
+                        <li><a href="voices.html">Voices from the Archive</a></li>
+                        <li><a href="explore.html">Thematic Collections</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="search.html">Search the Archive</a></li>
+                        <li><a href="about.html">About This Project</a></li>
+                        <li><a href="contribute.html">Contribute Materials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://browning.edu">The Browning School</a></li>
+                        <li><a href="mailto:archive@browning.edu">archive@browning.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Browning School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Voices Page JavaScript
+        (function() {
+          'use strict';
+
+          let voicesData = [];
+          let filteredData = [];
+          let currentFilter = 'all';
+
+          // Load voices data
+          async function loadVoicesData() {
+            try {
+              const response = await fetch('data/voices.json');
+              if (!response.ok) throw new Error('Failed to load voices data');
+
+              voicesData = await response.json();
+              filteredData = voicesData;
+
+              hideLoading();
+              renderVoices();
+            } catch (error) {
+              console.error('Error loading voices:', error);
+              showError('Failed to load voices. Please refresh the page.');
+            }
+          }
+
+          // Render voices
+          function renderVoices() {
+            renderFeaturedVoices();
+            renderAllVoices();
+            checkEmptyState();
+          }
+
+          // Render featured voices
+          function renderFeaturedVoices() {
+            const container = document.getElementById('featured-voices-grid');
+            if (!container) return;
+
+            const featured = filteredData.filter(voice => voice.featured);
+
+            if (featured.length === 0) {
+              document.getElementById('featured-voices').style.display = 'none';
+              return;
+            }
+
+            document.getElementById('featured-voices').style.display = 'block';
+
+            container.innerHTML = featured.map(voice => createVoiceCard(voice, true)).join('');
+            attachVoiceCardListeners();
+          }
+
+          // Render all voices
+          function renderAllVoices() {
+            const container = document.getElementById('voices-grid');
+            if (!container) return;
+
+            container.innerHTML = filteredData.map(voice => createVoiceCard(voice, false)).join('');
+            attachVoiceCardListeners();
+          }
+
+          // Create voice card HTML
+          function createVoiceCard(voice, isFeatured) {
+            const icon = getTypeIcon(voice.type);
+            const placeholder = BrowningArchive.Utils.createPlaceholder(voice.title, 400, 250);
+
+            return `
+              <article class="exhibit-card ${isFeatured ? 'featured' : ''} reveal" data-voice-id="${voice.id}">
+                <img src="${voice.imageUrl || placeholder}"
+                     alt="${voice.title}"
+                     class="exhibit-cover"
+                     onerror="this.src='${placeholder}'">
+                <div class="exhibit-card-content">
+                  <span class="exhibit-badge">${icon} ${capitalizeFirst(voice.type)}</span>
+                  <h3 class="exhibit-title">${voice.title}</h3>
+                  <p class="exhibit-subtitle">${voice.author} - ${voice.role}</p>
+                  <p class="exhibit-description">${truncateText(voice.description, 120)}</p>
+                  <div class="exhibit-meta">
+                    <span>📅 ${voice.decade}</span>
+                    ${voice.duration ? `<span>⏱️ ${voice.duration}</span>` : ''}
+                  </div>
+                  <button class="btn btn-secondary" style="width: 100%; margin-top: var(--space-md);">
+                    ${voice.type === 'audio' || voice.type === 'video' ? 'Play' : 'Read'}
+                  </button>
+                </div>
+              </article>
+            `;
+          }
+
+          // Attach click listeners to voice cards
+          function attachVoiceCardListeners() {
+            document.querySelectorAll('.exhibit-card[data-voice-id]').forEach(card => {
+              card.addEventListener('click', function() {
+                const voiceId = this.dataset.voiceId;
+                const voice = voicesData.find(v => v.id === voiceId);
+                if (voice) openVoiceModal(voice);
+              });
+            });
+          }
+
+          // Open voice modal
+          function openVoiceModal(voice) {
+            const modal = document.getElementById('voice-modal');
+            if (!modal) return;
+
+            // Set content
+            document.getElementById('voice-type-badge').textContent = capitalizeFirst(voice.type);
+            document.getElementById('voice-modal-title').textContent = voice.title;
+            document.getElementById('voice-author').textContent = `${voice.author}, ${voice.role}`;
+            document.getElementById('voice-date').textContent = BrowningArchive.Utils.formatDate(voice.date);
+            document.getElementById('voice-description').textContent = voice.description;
+            document.getElementById('voice-transcription').textContent = voice.transcription;
+
+            // Handle media type
+            const imageEl = document.getElementById('voice-image');
+            const audioEl = document.getElementById('voice-audio-player');
+            const videoEl = document.getElementById('voice-video-player');
+
+            imageEl.style.display = 'none';
+            audioEl.style.display = 'none';
+            videoEl.style.display = 'none';
+
+            if (voice.type === 'audio') {
+              imageEl.style.display = 'block';
+              imageEl.src = voice.imageUrl || BrowningArchive.Utils.createPlaceholder('Audio', 800, 400);
+              audioEl.style.display = 'block';
+              document.getElementById('voice-audio').src = voice.audioUrl || '';
+            } else if (voice.type === 'video') {
+              videoEl.style.display = 'block';
+              document.getElementById('voice-video').src = voice.videoUrl || '';
+            } else {
+              imageEl.style.display = 'block';
+              imageEl.src = voice.imageUrl || BrowningArchive.Utils.createPlaceholder(voice.title, 800, 500);
+            }
+
+            // Tags
+            if (voice.tags && voice.tags.length > 0) {
+              document.getElementById('voice-tags-section').style.display = 'block';
+              document.getElementById('voice-tags').innerHTML = voice.tags.map(tag =>
+                `<span class="category-tag">${tag}</span>`
+              ).join('');
+            } else {
+              document.getElementById('voice-tags-section').style.display = 'none';
+            }
+
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+
+          // Initialize filters
+          function initializeFilters() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+              btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                currentFilter = this.dataset.filter;
+                applyFilter(currentFilter);
+              });
+            });
+          }
+
+          // Apply filter
+          function applyFilter(filter) {
+            if (filter === 'all') {
+              filteredData = voicesData;
+            } else if (filter === 'featured') {
+              filteredData = voicesData.filter(v => v.featured);
+            } else {
+              filteredData = voicesData.filter(v => v.type === filter);
+            }
+            renderVoices();
+          }
+
+          // Reset filters
+          window.resetVoicesFilters = function() {
+            document.querySelector('.filter-btn[data-filter="all"]').click();
+          };
+
+          // Check empty state
+          function checkEmptyState() {
+            const isEmpty = filteredData.length === 0;
+            document.getElementById('empty-state').style.display = isEmpty ? 'block' : 'none';
+            document.getElementById('featured-voices').style.display = isEmpty ? 'none' : 'block';
+            document.getElementById('all-voices').style.display = isEmpty ? 'none' : 'block';
+          }
+
+          // Utility functions
+          function getTypeIcon(type) {
+            const icons = {
+              'letter': '📝',
+              'diary': '📔',
+              'audio': '🎙️',
+              'video': '🎥'
+            };
+            return icons[type] || '📄';
+          }
+
+          function capitalizeFirst(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+          }
+
+          function truncateText(text, max) {
+            return text.length > max ? text.substr(0, max) + '...' : text;
+          }
+
+          function hideLoading() {
+            document.getElementById('loading-state').style.display = 'none';
+          }
+
+          function showError(msg) {
+            document.getElementById('loading-state').innerHTML = `<p style="color: var(--color-secondary);">⚠️ ${msg}</p>`;
+          }
+
+          // Initialize modal close
+          document.getElementById('voice-modal-close')?.addEventListener('click', function() {
+            const modal = document.getElementById('voice-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+
+            // Stop any playing media
+            document.getElementById('voice-audio')?.pause();
+            document.getElementById('voice-video')?.pause();
+          });
+
+          // Close modal on outside click
+          document.getElementById('voice-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+              document.getElementById('voice-modal-close').click();
+            }
+          });
+
+          // Initialize
+          if (document.getElementById('voices-grid')) {
+            loadVoicesData();
+            initializeFilters();
+          }
+        })();
+    </script>
+
+</body>
+</html>

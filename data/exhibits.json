@@ -1,0 +1,164 @@
+[
+  {
+    "id": "john-browning-vision",
+    "title": "The Vision of John A. Browning",
+    "subtitle": "A Founder's Philosophy",
+    "description": "Explore our founder's educational philosophy through handwritten letters, early administrative documents, and rare photographs from the 1870s. Discover how John A. Browning's revolutionary ideas about character-based education shaped the school that bears his name.",
+    "coverImage": "assets/images/exhibits/john-browning-cover.jpg",
+    "theme": "founding",
+    "decade": "1870s-1890s",
+    "itemCount": 12,
+    "featured": true,
+    "chapters": [
+      {
+        "title": "Early Years and Philosophy",
+        "description": "John A. Browning's early writings reveal his commitment to holistic education."
+      },
+      {
+        "title": "Founding Documents",
+        "description": "Original letters and administrative records from the school's establishment."
+      },
+      {
+        "title": "The First Students",
+        "description": "Photographs and records of the inaugural class of 12 boys."
+      }
+    ],
+    "curator": "Browning Archive Staff",
+    "dateCreated": "2024-01-15"
+  },
+  {
+    "id": "browning-1950s",
+    "title": "A Day in the Life: Browning in the 1950s",
+    "subtitle": "Post-War Student Experience",
+    "description": "Step back into post-war student life with class photos, newspaper articles, event programs, and candid snapshots from the era. Experience the optimism and energy of Browning during America's golden age.",
+    "coverImage": "assets/images/exhibits/1950s-cover.jpg",
+    "theme": "student-life",
+    "decade": "1950s",
+    "itemCount": 45,
+    "featured": true,
+    "chapters": [
+      {
+        "title": "Morning Assembly",
+        "description": "Daily rituals and traditions that started each school day."
+      },
+      {
+        "title": "Classroom Life",
+        "description": "Academic programs and teaching methods of the 1950s."
+      },
+      {
+        "title": "After School",
+        "description": "Athletics, clubs, and social activities that defined student culture."
+      }
+    ],
+    "curator": "Historical Society",
+    "dateCreated": "2024-02-20"
+  },
+  {
+    "id": "arts-evolution",
+    "title": "The Evolution of the Arts at Browning",
+    "subtitle": "A Century of Creative Expression",
+    "description": "A multimedia journey through decades of creativityfrom early theater productions to choir performances and art exhibitions. Witness how the arts program has grown from modest beginnings to a cornerstone of Browning education.",
+    "coverImage": "assets/images/exhibits/arts-cover.jpg",
+    "theme": "arts",
+    "decade": "1900s-2000s",
+    "itemCount": 78,
+    "featured": true,
+    "chapters": [
+      {
+        "title": "Theater Through the Decades",
+        "description": "Stage productions from 1912 to present day."
+      },
+      {
+        "title": "Musical Traditions",
+        "description": "Choir, band, and musical performances spanning a century."
+      },
+      {
+        "title": "Visual Arts",
+        "description": "Student artwork, exhibitions, and the evolution of art education."
+      }
+    ],
+    "curator": "Arts Department",
+    "dateCreated": "2024-03-10"
+  },
+  {
+    "id": "athletic-legacy",
+    "title": "The Athletic Legacy",
+    "subtitle": "Champions and Team Spirit",
+    "description": "From the first baseball team in 1895 to modern championship squads, explore how athletics has shaped character, built community, and created lifelong memories for Browning students.",
+    "coverImage": "assets/images/exhibits/athletics-cover.jpg",
+    "theme": "athletics",
+    "decade": "1890s-2020s",
+    "itemCount": 56,
+    "featured": false,
+    "chapters": [
+      {
+        "title": "Early Athletics",
+        "description": "The founding of baseball and rowing programs."
+      },
+      {
+        "title": "Championship Years",
+        "description": "Memorable victories and legendary teams."
+      },
+      {
+        "title": "Coaches and Mentors",
+        "description": "The educators who built our athletic traditions."
+      }
+    ],
+    "curator": "Athletic Department",
+    "dateCreated": "2024-04-05"
+  },
+  {
+    "id": "campus-transformation",
+    "title": "Campus Through Time",
+    "subtitle": "Buildings, Spaces, and Growth",
+    "description": "Follow the physical evolution of The Browning School from rented rooms to modern facilities. See how each location shaped the student experience and reflected the changing needs of education.",
+    "coverImage": "assets/images/exhibits/campus-cover.jpg",
+    "theme": "campus",
+    "decade": "1870s-2020s",
+    "itemCount": 34,
+    "featured": false,
+    "chapters": [
+      {
+        "title": "First Locations",
+        "description": "The early homes of Browning on West 55th Street."
+      },
+      {
+        "title": "The 62nd Street Era",
+        "description": "Decades in our iconic East 62nd Street building."
+      },
+      {
+        "title": "Modern Campus",
+        "description": "21st century facilities and sustainability initiatives."
+      }
+    ],
+    "curator": "Facilities Archive",
+    "dateCreated": "2024-05-12"
+  },
+  {
+    "id": "wartime-browning",
+    "title": "Browning in Wartime",
+    "subtitle": "Service, Sacrifice, and Resilience",
+    "description": "How the Browning community responded to World Wars I and II, from alumni service to home front efforts. Letters from the front lines, victory gardens, and the spirit of a school united in national purpose.",
+    "coverImage": "assets/images/exhibits/wartime-cover.jpg",
+    "theme": "milestones",
+    "decade": "1910s-1940s",
+    "itemCount": 29,
+    "featured": false,
+    "chapters": [
+      {
+        "title": "World War I",
+        "description": "Alumni service and home front support during the Great War."
+      },
+      {
+        "title": "Between the Wars",
+        "description": "The interwar period and preparation for global conflict."
+      },
+      {
+        "title": "World War II",
+        "description": "A school community mobilized for victory."
+      }
+    ],
+    "curator": "History Department",
+    "dateCreated": "2024-06-18"
+  }
+]
