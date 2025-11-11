@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore 150+ years of The Browning School's history through an interactive, narrativized digital archive. Discover stories, photographs, and multimedia from our founding to today.">
+    <title>The Browning Archive | A Living History</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+
+    <!-- Site Header & Navigation -->
+    <header class="site-header" id="header">
+        <nav class="site-nav">
+            <a href="index.html" class="site-logo">The Browning Archive</a>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="timeline.html" class="nav-link">Timeline</a></li>
+                <li><a href="exhibits.html" class="nav-link">Exhibits</a></li>
+                <li><a href="voices.html" class="nav-link">Voices</a></li>
+                <li><a href="explore.html" class="nav-link">Explore</a></li>
+                <li><a href="search.html" class="nav-link">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background" style="background-image: url('assets/images/hero-placeholder.jpg');"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">150 Years of Stories.<br>One Living Archive.</h1>
+            <p class="hero-subtitle">
+                Journey through The Browning School's history—from handwritten letters to digitized memories.
+                Discover the moments, people, and traditions that shaped our community since 1870.
+            </p>
+            <div class="hero-cta">
+                <a href="timeline.html" class="btn btn-primary">Explore the Timeline</a>
+                <a href="exhibits.html" class="btn btn-secondary">View Exhibits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Exhibits Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Exhibits</h2>
+                <p class="section-subtitle">
+                    Curated collections that tell the stories of our past
+                </p>
+            </div>
+
+            <div class="grid grid-3">
+                <!-- Exhibit Card 1 -->
+                <article class="card reveal">
+                    <img src="assets/images/exhibits/john-browning-cover.jpg"
+                         alt="Portrait of John A. Browning"
+                         class="card-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23F5F5DC%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2224%22 fill=%22%238B4513%22%3EJohn A. Browning%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">The Vision of John A. Browning</h3>
+                        <p class="card-description">
+                            Explore our founder's educational philosophy through handwritten letters, early administrative documents, and rare photographs from the 1870s.
+                        </p>
+                        <div class="card-meta">
+                            <span>📅 1870-1900</span>
+                            <span>📄 12 Documents</span>
+                        </div>
+                        <a href="exhibits/john-browning-vision/index.html" class="btn btn-secondary" style="margin-top: 1rem;">View Exhibit</a>
+                    </div>
+                </article>
+
+                <!-- Exhibit Card 2 -->
+                <article class="card reveal">
+                    <img src="assets/images/exhibits/1950s-cover.jpg"
+                         alt="Students in the 1950s"
+                         class="card-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23F5F5DC%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2224%22 fill=%22%238B4513%22%3EBrowning 1950s%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">A Day in the Life: Browning in the 1950s</h3>
+                        <p class="card-description">
+                            Step back into post-war student life with class photos, newspaper articles, event programs, and candid snapshots from the era.
+                        </p>
+                        <div class="card-meta">
+                            <span>📅 1950-1959</span>
+                            <span>📷 45 Photos</span>
+                        </div>
+                        <a href="exhibits/browning-1950s/index.html" class="btn btn-secondary" style="margin-top: 1rem;">View Exhibit</a>
+                    </div>
+                </article>
+
+                <!-- Exhibit Card 3 -->
+                <article class="card reveal">
+                    <img src="assets/images/exhibits/arts-cover.jpg"
+                         alt="Theater performance"
+                         class="card-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23F5F5DC%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2224%22 fill=%22%238B4513%22%3EArts Evolution%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">The Evolution of the Arts at Browning</h3>
+                        <p class="card-description">
+                            A multimedia journey through decades of creativity—from early theater productions to choir performances and art exhibitions.
+                        </p>
+                        <div class="card-meta">
+                            <span>📅 1900-2000</span>
+                            <span>🎭 Multi-media</span>
+                        </div>
+                        <a href="exhibits/arts-evolution/index.html" class="btn btn-secondary" style="margin-top: 1rem;">View Exhibit</a>
+                    </div>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="exhibits.html" class="btn btn-primary">View All Exhibits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore by Theme Section -->
+    <section class="section" style="background-color: var(--color-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore by Theme</h2>
+                <p class="section-subtitle">
+                    Discover connections across decades through thematic collections
+                </p>
+            </div>
+
+            <div class="grid grid-4">
+                <a href="explore.html?theme=athletics" class="card reveal" style="text-decoration: none;">
+                    <img src="assets/images/themes/athletics.jpg"
+                         alt="Athletics"
+                         class="card-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23F5F5DC%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2228%22 fill=%22%238B4513%22%3E⚽%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">Athletics</h3>
+                        <p class="card-description">Team photos, championship victories, and the evolution of sports programs.</p>
+                    </div>
+                </a>
+
+                <a href="explore.html?theme=academics" class="card reveal" style="text-decoration: none;">
+                    <img src="assets/images/themes/academics.jpg"
+                         alt="Academics"
+                         class="card-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23F5F5DC%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2228%22 fill=%22%238B4513%22%3E📚%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">Academics</h3>
+                        <p class="card-description">Curriculum changes, innovative teaching, and intellectual achievements.</p>
+                    </div>
+                </a>
+
+                <a href="explore.html?theme=traditions" class="card reveal" style="text-decoration: none;">
+                    <img src="assets/images/themes/traditions.jpg"
+                         alt="Traditions"
+                         class="card-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23F5F5DC%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2228%22 fill=%22%238B4513%22%3E🎓%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">Student Traditions</h3>
+                        <p class="card-description">Annual events, rituals, and customs that define the Browning experience.</p>
+                    </div>
+                </a>
+
+                <a href="explore.html?theme=faculty" class="card reveal" style="text-decoration: none;">
+                    <img src="assets/images/themes/faculty.jpg"
+                         alt="Faculty"
+                         class="card-image"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23F5F5DC%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2228%22 fill=%22%238B4513%22%3E👥%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">Faculty Legacies</h3>
+                        <p class="card-description">The educators who shaped generations of Browning students.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voices Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Voices from the Archive</h2>
+                <p class="section-subtitle">
+                    Personal stories that bring history to life
+                </p>
+            </div>
+
+            <div class="grid grid-2">
+                <article class="card reveal">
+                    <div class="card-content">
+                        <h3 class="card-title">📝 Handwritten Letters</h3>
+                        <p class="card-description">
+                            Read original correspondence from founders, faculty, and students. Each letter offers an intimate glimpse into daily life, aspirations, and challenges across the decades.
+                        </p>
+                        <a href="voices.html#letters" class="btn btn-secondary">Read Letters</a>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div class="card-content">
+                        <h3 class="card-title">🎙️ Oral Histories</h3>
+                        <p class="card-description">
+                            Listen to digitized recordings of speeches, interviews, and performances. Hear the voices of alumni reflecting on their Browning experiences.
+                        </p>
+                        <a href="voices.html#audio" class="btn btn-secondary">Listen Now</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); color: white;">
+        <div class="container">
+            <div class="content-wrapper" style="text-align: center;">
+                <h2 class="section-title" style="color: white;">Begin Your Journey</h2>
+                <p style="font-size: var(--text-lg); margin-bottom: var(--space-2xl); color: var(--color-cream);">
+                    Dive into 150 years of history. Start with the timeline, explore a curated exhibit,
+                    or search for something specific. Every click reveals a new story.
+                </p>
+                <div style="display: flex; gap: var(--space-lg); justify-content: center; flex-wrap: wrap;">
+                    <a href="timeline.html" class="btn" style="background-color: white; color: var(--color-primary);">Interactive Timeline</a>
+                    <a href="search.html" class="btn btn-secondary" style="border-color: white; color: white;">Search the Archive</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Browning Archive</h3>
+                    <p>Preserving and sharing 150+ years of The Browning School's history through an interactive digital experience.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="timeline.html">Historical Timeline</a></li>
+                        <li><a href="exhibits.html">Digital Exhibits</a></li>
+                        <li><a href="voices.html">Voices from the Archive</a></li>
+                        <li><a href="explore.html">Thematic Collections</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="search.html">Search the Archive</a></li>
+                        <li><a href="about.html">About This Project</a></li>
+                        <li><a href="contribute.html">Contribute Materials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://browning.edu">The Browning School</a></li>
+                        <li><a href="mailto:archive@browning.edu">archive@browning.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Browning School. All rights reserved. Archive materials used with permission.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,527 @@
+/* ============================================
+   Interactive Historical Timeline Styles
+   ============================================ */
+
+/* Timeline Container */
+.timeline-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--color-parchment), white);
+}
+
+.timeline-intro {
+  text-align: center;
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-intro h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.timeline-intro p {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+/* Timeline Controls */
+.timeline-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-2xl) 0;
+  flex-wrap: wrap;
+}
+
+.timeline-filter {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: white;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-secondary);
+  background-color: var(--color-surface);
+}
+
+.filter-btn.active {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+/* Timeline Wrapper */
+.timeline-wrapper {
+  position: relative;
+  padding: var(--space-2xl) 0;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+/* Horizontal Timeline */
+.timeline-horizontal {
+  position: relative;
+  min-height: 600px;
+  padding: var(--space-4xl) var(--container-padding);
+}
+
+/* Timeline Line */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Decade Markers */
+.timeline-decades {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-width: 1200px;
+  padding: 0 var(--space-2xl);
+  z-index: 2;
+}
+
+.decade-marker {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.decade-dot {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-secondary);
+  border: 4px solid white;
+  border-radius: 50%;
+  margin: 0 auto var(--space-sm);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.decade-marker:hover .decade-dot {
+  transform: scale(1.3);
+  background-color: var(--color-accent);
+}
+
+.decade-label {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Timeline Events */
+.timeline-events {
+  position: relative;
+  padding: var(--space-4xl) 0;
+  z-index: 3;
+}
+
+.timeline-event {
+  position: absolute;
+  width: 280px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--transition-base);
+}
+
+.timeline-event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-event.above {
+  bottom: calc(50% + 40px);
+}
+
+.timeline-event.below {
+  top: calc(50% + 40px);
+}
+
+.event-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background-color: var(--color-secondary);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-event.above .event-card::before {
+  bottom: -30px;
+}
+
+.timeline-event.below .event-card::before {
+  top: -30px;
+}
+
+.event-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: var(--space-lg);
+}
+
+.event-date {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.event-title {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+
+.event-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.event-categories {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  padding: 4px 10px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+/* Event Detail Modal */
+.event-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: var(--space-2xl);
+  overflow-y: auto;
+}
+
+.event-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: fadeInUp 0.4s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+  transition: all var(--transition-base);
+}
+
+.modal-close:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.modal-header-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: var(--space-3xl);
+}
+
+.modal-date {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.modal-title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-lg);
+}
+
+.modal-description {
+  font-size: var(--text-base);
+  line-height: 1.8;
+  margin-bottom: var(--space-2xl);
+}
+
+.modal-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-2xl) 0;
+}
+
+.modal-media-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.modal-media-item:hover {
+  transform: scale(1.05);
+}
+
+.modal-media-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.modal-caption {
+  padding: var(--space-sm);
+  background-color: var(--color-surface);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.related-content {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 2px solid var(--color-border);
+}
+
+.related-content h3 {
+  margin-bottom: var(--space-lg);
+}
+
+.related-links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.related-link {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  color: var(--color-secondary);
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.related-link:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Vertical Timeline (Mobile) */
+@media (max-width: 768px) {
+  .timeline-horizontal {
+    display: none;
+  }
+
+  .timeline-vertical {
+    display: block;
+    position: relative;
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .timeline-vertical::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--color-secondary), var(--color-accent));
+  }
+
+  .timeline-event-vertical {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .timeline-event-vertical::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-secondary);
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+  }
+
+  .event-modal {
+    padding: var(--space-md);
+  }
+
+  .modal-body {
+    padding: var(--space-lg);
+  }
+
+  .modal-header-image {
+    height: 250px;
+  }
+}
+
+/* Timeline Navigation */
+.timeline-nav {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-md);
+  background-color: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+}
+
+.timeline-nav-btn {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.timeline-nav-btn:hover {
+  background-color: var(--color-primary);
+}
+
+.timeline-nav-btn:disabled {
+  background-color: var(--color-border);
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.timeline-loading {
+  text-align: center;
+  padding: var(--space-4xl);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--color-border);
+  border-top-color: var(--color-secondary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--space-lg);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scroll Animations */
+.timeline-event {
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-event.above {
+  animation: slideInFromLeft 0.6s ease forwards;
+}
+
+.timeline-event.below {
+  animation: slideInFromRight 0.6s ease forwards;
+}
