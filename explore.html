@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore The Browning Archive by theme. Discover how athletics, academics, arts, and traditions have evolved across decades.">
+    <title>Explore by Theme | The Browning Archive</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/exhibits.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+
+    <!-- Site Header & Navigation -->
+    <header class="site-header" id="header">
+        <nav class="site-nav">
+            <a href="index.html" class="site-logo">The Browning Archive</a>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="timeline.html" class="nav-link">Timeline</a></li>
+                <li><a href="exhibits.html" class="nav-link">Exhibits</a></li>
+                <li><a href="voices.html" class="nav-link">Voices</a></li>
+                <li><a href="explore.html" class="nav-link active">Explore</a></li>
+                <li><a href="search.html" class="nav-link">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Explore Page -->
+    <main class="explore-page" id="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Explore by Theme</h1>
+                <p class="page-description">
+                    Follow the threads that connect our past to present. Each theme brings together materials
+                    from across the decades, revealing how Browning's programs, values, and community have
+                    evolved while maintaining their essential character.
+                </p>
+            </div>
+
+            <!-- Featured Themes -->
+            <section class="featured-themes-section">
+                <h2 class="section-title">Featured Themes</h2>
+                <div class="themes-grid featured" id="featured-themes-grid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- All Themes -->
+            <section class="all-themes-section">
+                <h2 class="section-title">All Themes</h2>
+                <div class="themes-grid" id="all-themes-grid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading themes...</p>
+            </div>
+        </div>
+
+        <!-- Interactive Feature Section -->
+        <section class="explore-feature">
+            <div class="container">
+                <div class="feature-content">
+                    <h2>Discover Connections Across Time</h2>
+                    <p>
+                        Our thematic collections allow you to see how different aspects of Browning life have
+                        evolved and endured. Track the development of academic programs, follow the growth of
+                        athletic traditions, or see how technology has transformed teaching and learning.
+                    </p>
+                    <div class="feature-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="total-items">1,200+</div>
+                            <div class="stat-label">Archive Items</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Years of History</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Thematic Collections</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Browning Archive</h3>
+                    <p>Preserving and sharing 150+ years of The Browning School's history through an interactive digital experience.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="timeline.html">Historical Timeline</a></li>
+                        <li><a href="exhibits.html">Digital Exhibits</a></li>
+                        <li><a href="voices.html">Voices from the Archive</a></li>
+                        <li><a href="explore.html">Thematic Collections</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="search.html">Search the Archive</a></li>
+                        <li><a href="about.html">About This Project</a></li>
+                        <li><a href="contribute.html">Contribute Materials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://browning.edu">The Browning School</a></li>
+                        <li><a href="mailto:archive@browning.edu">archive@browning.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Browning School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Explore Page JavaScript
+        (function() {
+          'use strict';
+
+          let themesData = [];
+
+          // Load themes data
+          async function loadThemesData() {
+            try {
+              const response = await fetch('data/themes.json');
+              if (!response.ok) throw new Error('Failed to load themes data');
+
+              themesData = await response.json();
+
+              hideLoading();
+              renderThemes();
+              updateStats();
+            } catch (error) {
+              console.error('Error loading themes:', error);
+              showError('Failed to load themes. Please refresh the page.');
+            }
+          }
+
+          // Render themes
+          function renderThemes() {
+            renderFeaturedThemes();
+            renderAllThemes();
+          }
+
+          // Render featured themes
+          function renderFeaturedThemes() {
+            const container = document.getElementById('featured-themes-grid');
+            if (!container) return;
+
+            const featured = themesData.filter(theme => theme.featured);
+
+            container.innerHTML = featured.map(theme => createThemeCard(theme, true)).join('');
+          }
+
+          // Render all themes
+          function renderAllThemes() {
+            const container = document.getElementById('all-themes-grid');
+            if (!container) return;
+
+            container.innerHTML = themesData.map(theme => createThemeCard(theme, false)).join('');
+          }
+
+          // Create theme card HTML
+          function createThemeCard(theme, isFeatured) {
+            const placeholder = BrowningArchive.Utils.createPlaceholder(theme.icon, 400, 250);
+
+            return `
+              <a href="explore-theme.html?theme=${theme.id}" class="theme-card ${isFeatured ? 'featured' : ''} reveal">
+                <div class="theme-card-image-wrapper">
+                  <img src="${theme.coverImage}"
+                       alt="${theme.name}"
+                       class="theme-card-image"
+                       onerror="this.src='${placeholder}'">
+                  <div class="theme-card-overlay">
+                    <span class="theme-icon">${theme.icon}</span>
+                  </div>
+                </div>
+                <div class="theme-card-content">
+                  <h3 class="theme-title">${theme.name}</h3>
+                  <p class="theme-description">${theme.description}</p>
+                  <div class="theme-meta">
+                    <span>📄 ${theme.itemCount} items</span>
+                    <span>📅 ${theme.decades.length} decades</span>
+                  </div>
+                </div>
+              </a>
+            `;
+          }
+
+          // Update statistics
+          function updateStats() {
+            const totalItems = themesData.reduce((sum, theme) => sum + theme.itemCount, 0);
+            const totalItemsEl = document.getElementById('total-items');
+            if (totalItemsEl) {
+              totalItemsEl.textContent = totalItems.toLocaleString() + '+';
+            }
+          }
+
+          // Utility functions
+          function hideLoading() {
+            const loading = document.getElementById('loading-state');
+            if (loading) loading.style.display = 'none';
+          }
+
+          function showError(msg) {
+            const loading = document.getElementById('loading-state');
+            if (loading) {
+              loading.innerHTML = `<p style="color: var(--color-secondary);">⚠️ ${msg}</p>`;
+            }
+          }
+
+          // Initialize
+          if (document.getElementById('featured-themes-grid')) {
+            loadThemesData();
+          }
+        })();
+    </script>
+
+    <style>
+        /* Explore Page Specific Styles */
+        .explore-page {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .featured-themes-section,
+        .all-themes-section {
+            margin-bottom: var(--space-4xl);
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-2xl);
+        }
+
+        .themes-grid.featured {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .theme-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-card.featured {
+            border: 3px solid var(--color-accent);
+        }
+
+        .theme-card-image-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .theme-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-base);
+        }
+
+        .theme-card:hover .theme-card-image {
+            transform: scale(1.1);
+        }
+
+        .theme-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44, 24, 16, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-xl);
+        }
+
+        .theme-icon {
+            font-size: 3rem;
+        }
+
+        .theme-card-content {
+            padding: var(--space-xl);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .theme-title {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-md);
+            color: var(--color-primary);
+        }
+
+        .theme-description {
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+            flex: 1;
+        }
+
+        .theme-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* Explore Feature Section */
+        .explore-feature {
+            background: linear-gradient(135deg, var(--color-parchment), var(--color-cream));
+            padding: var(--space-4xl) 0;
+            margin-top: var(--space-4xl);
+        }
+
+        .feature-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feature-content h2 {
+            margin-bottom: var(--space-lg);
+        }
+
+        .feature-content p {
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .feature-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-2xl);
+        }
+
+        .stat {
+            padding: var(--space-xl);
+            background-color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--color-secondary);
+            font-family: var(--font-display);
+            margin-bottom: var(--space-sm);
+        }
+
+        .stat-label {
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .themes-grid,
+            .themes-grid.featured {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-stats {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+        }
+    </style>
+
+</body>
+</html>

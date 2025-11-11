@@ -1,0 +1,102 @@
+[
+  {
+    "id": "athletics",
+    "name": "Athletics",
+    "icon": "½",
+    "description": "Team sports, physical education, and the spirit of competition that has built character and camaraderie for over a century.",
+    "coverImage": "assets/images/themes/athletics.jpg",
+    "itemCount": 156,
+    "decades": ["1890s", "1900s", "1910s", "1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": true
+  },
+  {
+    "id": "academics",
+    "name": "Academics",
+    "icon": "=Ú",
+    "description": "Curriculum evolution, innovative teaching methods, and the pursuit of intellectual excellence across all disciplines.",
+    "coverImage": "assets/images/themes/academics.jpg",
+    "itemCount": 203,
+    "decades": ["1870s", "1880s", "1890s", "1900s", "1910s", "1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": true
+  },
+  {
+    "id": "arts",
+    "name": "Arts & Culture",
+    "icon": "<­",
+    "description": "Theater, music, visual arts, and creative expressionthe programs that allow students to discover and develop their artistic voices.",
+    "coverImage": "assets/images/themes/arts.jpg",
+    "itemCount": 187,
+    "decades": ["1910s", "1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": true
+  },
+  {
+    "id": "traditions",
+    "name": "Student Traditions",
+    "icon": "<“",
+    "description": "Annual events, ceremonies, and rituals passed down through generations that create a shared sense of identity and belonging.",
+    "coverImage": "assets/images/themes/traditions.jpg",
+    "itemCount": 142,
+    "decades": ["1870s", "1880s", "1890s", "1900s", "1910s", "1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": true
+  },
+  {
+    "id": "faculty",
+    "name": "Faculty Legacies",
+    "icon": "=e",
+    "description": "The dedicated educators who shaped minds, inspired dreams, and left lasting impressions on generations of students.",
+    "coverImage": "assets/images/themes/faculty.jpg",
+    "itemCount": 98,
+    "decades": ["1870s", "1880s", "1890s", "1900s", "1910s", "1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": false
+  },
+  {
+    "id": "campus",
+    "name": "Campus Evolution",
+    "icon": "<Û",
+    "description": "The physical spaces that housed our communityfrom modest beginnings to modern facilities that support 21st-century learning.",
+    "coverImage": "assets/images/themes/campus.jpg",
+    "itemCount": 76,
+    "decades": ["1870s", "1880s", "1890s", "1940s", "1960s", "1980s", "2000s", "2010s", "2020s"],
+    "featured": false
+  },
+  {
+    "id": "service",
+    "name": "Service & Leadership",
+    "icon": ">",
+    "description": "Community service, student government, and leadership development programs that prepare students to make a positive impact.",
+    "coverImage": "assets/images/themes/service.jpg",
+    "itemCount": 89,
+    "decades": ["1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": false
+  },
+  {
+    "id": "technology",
+    "name": "Technology & Innovation",
+    "icon": "=»",
+    "description": "From the first computer lab to modern maker spaceshow Browning has embraced and integrated new technologies into education.",
+    "coverImage": "assets/images/themes/technology.jpg",
+    "itemCount": 54,
+    "decades": ["1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": false
+  },
+  {
+    "id": "global",
+    "name": "Global Connections",
+    "icon": "<",
+    "description": "Exchange programs, international partnerships, and the development of global citizenship in our students.",
+    "coverImage": "assets/images/themes/global.jpg",
+    "itemCount": 67,
+    "decades": ["1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": false
+  },
+  {
+    "id": "alumni",
+    "name": "Alumni Stories",
+    "icon": "<–",
+    "description": "The remarkable achievements and diverse paths of Browning graduates who carry our values into the world.",
+    "coverImage": "assets/images/themes/alumni.jpg",
+    "itemCount": 134,
+    "decades": ["1890s", "1900s", "1910s", "1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+    "featured": false
+  }
+]
