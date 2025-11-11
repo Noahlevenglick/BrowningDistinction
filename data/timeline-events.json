@@ -1,0 +1,318 @@
+[
+  {
+    "id": "founding-1870",
+    "date": "1870-09-15",
+    "year": 1870,
+    "decade": "1870s",
+    "title": "The Browning School Founded",
+    "description": "John A. Browning establishes The Browning School in New York City with a vision to provide rigorous, personalized education for young men. Beginning with just 12 students in rented rooms, Browning's founding philosophy emphasized character development alongside academic excellence. His handwritten letters from this period reveal a deep commitment to nurturing 'the whole boy'mind, body, and spirit.",
+    "categories": ["founding", "milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1870-founding.jpg",
+        "caption": "John A. Browning, Founder (1870)",
+        "credit": "Browning Archive Collection"
+      },
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1870-first-building.jpg",
+        "caption": "The first rented rooms on West 55th Street",
+        "credit": "NYC Historical Society"
+      }
+    ],
+    "relatedExhibits": ["john-browning-vision"],
+    "relatedItems": ["letter-1870-01", "photo-1870-building"]
+  },
+  {
+    "id": "first-building-1888",
+    "date": "1888-10-01",
+    "year": 1888,
+    "decade": "1880s",
+    "title": "First Permanent Building Acquired",
+    "description": "After 18 years of steady growth, The Browning School purchases its first permanent building on West 55th Street. This milestone represents the school's transition from a small tutoring academy to an established institution. The building featured dedicated classrooms, a small library, and space for the growing student body of over 60 boys.",
+    "categories": ["campus", "milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1888-building.jpg",
+        "caption": "The Browning School's first owned building (1888)",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": ["photo-1888-exterior", "doc-1888-purchase"]
+  },
+  {
+    "id": "athletics-1895",
+    "date": "1895-05-12",
+    "year": 1895,
+    "decade": "1890s",
+    "title": "First Athletics Program Established",
+    "description": "The school establishes its first formal athletics program with baseball and rowing teams. Physical education becomes an integral part of the Browning experience, reflecting the era's emphasis on developing well-rounded young men. The baseball team's first season ends with a 5-3 record against other New York private schools.",
+    "categories": ["athletics", "academics"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1895-baseball-team.jpg",
+        "caption": "The inaugural Browning baseball team (1895)",
+        "credit": "Browning Athletic Archives"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": ["photo-1895-team"]
+  },
+  {
+    "id": "new-century-1900",
+    "date": "1900-01-01",
+    "year": 1900,
+    "decade": "1900s",
+    "title": "Entering the 20th Century",
+    "description": "As the new century dawns, The Browning School enters a period of modernization. The curriculum expands to include modern languages, laboratory sciences, and the arts. Student enrollment reaches 120, requiring additional faculty and expanded facilities.",
+    "categories": ["academics", "milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1900-students.jpg",
+        "caption": "Browning students at the turn of the century",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": []
+  },
+  {
+    "id": "theater-program-1912",
+    "date": "1912-03-15",
+    "year": 1912,
+    "decade": "1910s",
+    "title": "First Theater Production",
+    "description": "The Browning Players perform their first full-length theatrical production, 'She Stoops to Conquer' by Oliver Goldsmith. This marks the beginning of a rich tradition of dramatic arts at Browning. The production is performed for students, families, and neighboring schools, establishing theater as a cornerstone of student life.",
+    "categories": ["arts", "academics"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1912-theater.jpg",
+        "caption": "Cast of 'She Stoops to Conquer' (1912)",
+        "credit": "Browning Theater Archives"
+      }
+    ],
+    "relatedExhibits": ["arts-evolution"],
+    "relatedItems": ["program-1912-theater"]
+  },
+  {
+    "id": "wwi-service-1917",
+    "date": "1917-04-06",
+    "year": 1917,
+    "decade": "1910s",
+    "title": "Alumni Serve in World War I",
+    "description": "Following America's entry into World War I, dozens of Browning alumni enlist in military service. The school community rallies to support the war effort through bond drives, Red Cross activities, and Victory Gardens. Letters from alumni in Europe are read aloud during assemblies, connecting the school community to global events.",
+    "categories": ["milestones", "academics"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1917-service-honor-roll.jpg",
+        "caption": "Browning's WWI Service Honor Roll",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": ["letter-1917-france", "photo-1917-assembly"]
+  },
+  {
+    "id": "yearbook-1925",
+    "date": "1925-06-01",
+    "year": 1925,
+    "decade": "1920s",
+    "title": "First School Yearbook Published",
+    "description": "Students publish 'The Gull,' Browning's first yearbook, capturing the personalities, activities, and spirit of the school year. This tradition continues to this day, providing an invaluable record of student life across generations. The inaugural edition features class portraits, athletic team photos, and humorous student superlatives.",
+    "categories": ["academics", "milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1925-yearbook-cover.jpg",
+        "caption": "The first 'Gull' yearbook cover (1925)",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": ["yearbook-1925"]
+  },
+  {
+    "id": "move-62nd-street-1940",
+    "date": "1940-09-01",
+    "year": 1940,
+    "decade": "1940s",
+    "title": "Relocation to East 62nd Street",
+    "description": "The Browning School moves to a larger facility on East 62nd Street, accommodating growing enrollment and expanded programs. The new building features science laboratories, an auditorium, and a rooftop athletic space. This location serves the school for decades and becomes synonymous with the Browning identity for generations of students.",
+    "categories": ["campus", "milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1940-62nd-street.jpg",
+        "caption": "The new Browning building on East 62nd Street",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": ["photo-1940-building", "doc-1940-dedication"]
+  },
+  {
+    "id": "postwar-1948",
+    "date": "1948-06-15",
+    "year": 1948,
+    "decade": "1940s",
+    "title": "Post-War Enrollment Boom",
+    "description": "In the aftermath of World War II, enrollment surges as veterans return home and start families. Browning welcomes its largest class to date, reflecting the broader baby boom era. The school expands its faculty and introduces new programs to meet the needs of this growing community.",
+    "categories": ["academics", "milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1948-class-photo.jpg",
+        "caption": "Record-breaking class of 1948",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": ["browning-1950s"],
+    "relatedItems": []
+  },
+  {
+    "id": "science-fair-1955",
+    "date": "1955-04-20",
+    "year": 1955,
+    "decade": "1950s",
+    "title": "First Annual Science Fair",
+    "description": "The inaugural Browning Science Fair showcases student innovation and scientific curiosity. Projects range from model rockets to chemistry demonstrations, reflecting the Space Age enthusiasm of the era. The tradition continues today, evolving to include cutting-edge research in robotics, environmental science, and computer programming.",
+    "categories": ["academics"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1955-science-fair.jpg",
+        "caption": "Students present at the first Science Fair",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": ["browning-1950s"],
+    "relatedItems": ["photo-1955-projects"]
+  },
+  {
+    "id": "centennial-1970",
+    "date": "1970-09-15",
+    "year": 1970,
+    "decade": "1970s",
+    "title": "Centennial Celebration",
+    "description": "The Browning School celebrates 100 years of excellence in education with a year-long series of events, lectures, and reunions. Alumni from across the decades return to campus to share memories and reconnect. A time capsule is buried, containing student essays, photographs, and predictions for the school's next century.",
+    "categories": ["milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1970-centennial.jpg",
+        "caption": "Centennial celebration assembly (1970)",
+        "credit": "Browning Archive"
+      },
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1970-time-capsule.jpg",
+        "caption": "Burying the centennial time capsule",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": ["program-1970-centennial"]
+  },
+  {
+    "id": "computer-lab-1985",
+    "date": "1985-10-01",
+    "year": 1985,
+    "decade": "1980s",
+    "title": "First Computer Laboratory Opens",
+    "description": "Browning enters the digital age with the opening of its first computer laboratory, equipped with Apple IIe computers. Students learn BASIC programming, word processing, and early database management. This investment in technology education positions Browning at the forefront of integrating computers into the curriculum.",
+    "categories": ["academics", "campus"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1985-computer-lab.jpg",
+        "caption": "Students in the new computer lab (1985)",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": []
+  },
+  {
+    "id": "music-program-1992",
+    "date": "1992-05-10",
+    "year": 1992,
+    "decade": "1990s",
+    "title": "Expanded Music Program",
+    "description": "The school expands its music program to include jazz ensemble, chamber music, and music theory courses. The Browning Jazz Band performs at prestigious venues around New York City, earning recognition for excellence. This era marks a renaissance in the performing arts at Browning.",
+    "categories": ["arts"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/1992-jazz-band.jpg",
+        "caption": "The Browning Jazz Band performs at Carnegie Hall",
+        "credit": "Browning Music Department"
+      }
+    ],
+    "relatedExhibits": ["arts-evolution"],
+    "relatedItems": []
+  },
+  {
+    "id": "new-millennium-2000",
+    "date": "2000-01-01",
+    "year": 2000,
+    "decade": "2000s",
+    "title": "Entering the New Millennium",
+    "description": "As Y2K fears subside, Browning enters the 21st century with renewed focus on preparing students for a rapidly changing world. The curriculum emphasizes critical thinking, global awareness, and technological literacy. New partnerships with international schools create exchange programs that broaden student perspectives.",
+    "categories": ["milestones", "academics"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/2000-millennium.jpg",
+        "caption": "Millennium celebration at Browning",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": []
+  },
+  {
+    "id": "green-initiative-2010",
+    "date": "2010-04-22",
+    "year": 2010,
+    "decade": "2010s",
+    "title": "Sustainability Initiative Launch",
+    "description": "On Earth Day 2010, Browning launches its comprehensive sustainability initiative, including solar panels, recycling programs, and an environmental science curriculum. Students take leadership roles in making the campus more eco-friendly, from rooftop gardens to energy audits. The initiative reflects Browning's commitment to educating responsible global citizens.",
+    "categories": ["academics", "campus"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/2010-solar-panels.jpg",
+        "caption": "Installation of rooftop solar panels",
+        "credit": "Browning Facilities"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": []
+  },
+  {
+    "id": "sesquicentennial-2020",
+    "date": "2020-09-15",
+    "year": 2020,
+    "decade": "2020s",
+    "title": "150th Anniversary Celebration",
+    "description": "The Browning School celebrates 150 years of educational excellence, adapted for the COVID-19 pandemic with virtual gatherings and this digital archive project. Despite challenges, the community comes together to honor the past and look forward to the future. The creation of this interactive archive ensures that Browning's rich history remains accessible to all.",
+    "categories": ["milestones"],
+    "media": [
+      {
+        "type": "image",
+        "url": "assets/images/timeline/2020-sesquicentennial.jpg",
+        "caption": "Virtual sesquicentennial celebration (2020)",
+        "credit": "Browning Archive"
+      }
+    ],
+    "relatedExhibits": [],
+    "relatedItems": []
+  }
+]

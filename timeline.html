@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore The Browning School's history through an interactive, scrollable timeline spanning from 1870 to today.">
+    <title>Historical Timeline | The Browning Archive</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+
+    <!-- Site Header & Navigation -->
+    <header class="site-header" id="header">
+        <nav class="site-nav">
+            <a href="index.html" class="site-logo">The Browning Archive</a>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="timeline.html" class="nav-link active">Timeline</a></li>
+                <li><a href="exhibits.html" class="nav-link">Exhibits</a></li>
+                <li><a href="voices.html" class="nav-link">Voices</a></li>
+                <li><a href="explore.html" class="nav-link">Explore</a></li>
+                <li><a href="search.html" class="nav-link">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Timeline Page -->
+    <main class="timeline-page">
+        <div class="container">
+            <!-- Introduction -->
+            <div class="timeline-intro">
+                <h1>Historical Timeline</h1>
+                <p>
+                    Journey through 150+ years of Browning history. Click on any event to explore photos,
+                    documents, and stories from that moment in time. Filter by category to focus on specific
+                    aspects of our school's evolution.
+                </p>
+            </div>
+
+            <!-- Timeline Controls -->
+            <div class="timeline-controls">
+                <div class="timeline-filter">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="founding">Founding</button>
+                    <button class="filter-btn" data-filter="academics">Academics</button>
+                    <button class="filter-btn" data-filter="athletics">Athletics</button>
+                    <button class="filter-btn" data-filter="arts">Arts & Culture</button>
+                    <button class="filter-btn" data-filter="campus">Campus & Buildings</button>
+                    <button class="filter-btn" data-filter="milestones">Major Milestones</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Wrapper -->
+        <div class="timeline-wrapper">
+            <!-- Horizontal Timeline (Desktop) -->
+            <div class="timeline-horizontal" id="timeline-horizontal">
+                <div class="timeline-line"></div>
+
+                <!-- Decade Markers -->
+                <div class="timeline-decades" id="timeline-decades">
+                    <!-- Populated by JavaScript -->
+                </div>
+
+                <!-- Timeline Events -->
+                <div class="timeline-events" id="timeline-events">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Vertical Timeline (Mobile) -->
+            <div class="timeline-vertical" id="timeline-vertical" style="display: none;">
+                <!-- Populated by JavaScript for mobile -->
+            </div>
+
+            <!-- Loading State -->
+            <div class="timeline-loading" id="timeline-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading historical events...</p>
+            </div>
+        </div>
+
+        <!-- Timeline Navigation -->
+        <div class="timeline-nav" id="timeline-nav" style="display: none;">
+            <button class="timeline-nav-btn" id="prev-decade">← Previous Decade</button>
+            <span id="current-decade" style="padding: 0 var(--space-lg); font-weight: 600;"></span>
+            <button class="timeline-nav-btn" id="next-decade">Next Decade →</button>
+        </div>
+    </main>
+
+    <!-- Event Detail Modal -->
+    <div class="event-modal" id="event-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+
+            <img src="" alt="" class="modal-header-image" id="modal-image">
+
+            <div class="modal-body">
+                <p class="modal-date" id="modal-date"></p>
+                <h2 class="modal-title" id="modal-title"></h2>
+
+                <div id="modal-categories" class="event-categories" style="margin-bottom: var(--space-lg);"></div>
+
+                <div class="modal-description" id="modal-description"></div>
+
+                <!-- Additional Media -->
+                <div id="modal-media-section" style="display: none;">
+                    <h3>Related Materials</h3>
+                    <div class="modal-media-grid" id="modal-media-grid"></div>
+                </div>
+
+                <!-- Related Content -->
+                <div class="related-content" id="related-content" style="display: none;">
+                    <h3>Explore Further</h3>
+                    <div class="related-links" id="related-links"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Browning Archive</h3>
+                    <p>Preserving and sharing 150+ years of The Browning School's history through an interactive digital experience.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="timeline.html">Historical Timeline</a></li>
+                        <li><a href="exhibits.html">Digital Exhibits</a></li>
+                        <li><a href="voices.html">Voices from the Archive</a></li>
+                        <li><a href="explore.html">Thematic Collections</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="search.html">Search the Archive</a></li>
+                        <li><a href="about.html">About This Project</a></li>
+                        <li><a href="contribute.html">Contribute Materials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://browning.edu">The Browning School</a></li>
+                        <li><a href="mailto:archive@browning.edu">archive@browning.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Browning School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/timeline.js"></script>
+
+</body>
+</html>
